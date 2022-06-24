@@ -1,0 +1,41 @@
+{{page-title 'Sets'}}
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Cards</th>
+      <th>Release Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each (this.sortByDate @model) as |cycle|}}
+      <tr>
+        <td>
+          {{cycle.name}}
+        </td>
+        <td>
+          {{cycle.cardCount}}
+        </td>
+        <td>
+          ({{this.formatDate cycle.dateRelease}})
+
+        </td>
+      </tr>
+      {{#each (this.sortByDate cycle.cardSets) as |set|}}
+        <tr>
+          <td>
+            &emsp;{{set.name}}
+          </td>
+          <td>
+            {{set.size}}
+          </td>
+          <td>
+            {{set.dateRelease}}
+          </td>
+        </tr>
+      {{/each}}
+    {{/each}}
+  </tbody>
+</table>

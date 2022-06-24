@@ -1,0 +1,13 @@
+{{page-title 'Cards'}}
+
+<ol>
+  {{#each @model as |card|}}
+    <li>{{card.title}}
+      ({{card.side.name}}
+      -
+      {{card.faction.name}}
+      {{if card.faction.isMini 'mini' 'full'~}}
+      )
+    </li>
+  {{/each}}
+</ol>

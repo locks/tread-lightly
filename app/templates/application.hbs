@@ -1,13 +1,11 @@
 {{page-title 'Tread Lightly'}}
 
-<ol>
-  {{#each @model as |card|}}
-    <li>{{card.title}}
-      ({{card.side.name}}
-      -
-      {{card.faction.name}})
-      {{if (this.isCorp card.side.name) 'C' 'R'}}</li>
-  {{/each}}
-</ol>
+<nav>
+  <ul>
+    <li>Home</li>
+    <li><LinkTo @route='cards'>Cards</LinkTo></li>
+    <li><LinkTo @route='sets'>Sets</LinkTo></li>
+  </ul>
+</nav>
 
 {{outlet}}

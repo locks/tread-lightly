@@ -1,10 +1,2 @@
 import Route from '@ember/routing/route';
-import { service } from '@ember/service';
-
-export default class ApplicationRoute extends Route {
-  @service store;
-
-  model() {
-    return this.store.findAll('card', { include: ['side', 'faction'] });
-  }
-}
+export default class ApplicationRoute extends Route {}
