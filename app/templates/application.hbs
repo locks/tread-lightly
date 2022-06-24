@@ -1,7 +1,13 @@
-{{page-title "TreadLightly"}}
+{{page-title 'Tread Lightly'}}
 
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<ol>
+  {{#each @model as |card|}}
+    <li>{{card.title}}
+      ({{card.side.name}}
+      -
+      {{card.faction.name}})
+      {{if (this.isCorp card.side.name) 'C' 'R'}}</li>
+  {{/each}}
+</ol>
 
 {{outlet}}
