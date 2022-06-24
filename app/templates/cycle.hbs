@@ -1,0 +1,35 @@
+{{page-title 'Cycle'}}
+
+<h2>
+  {{@model.name}}
+</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        title
+      </th>
+      <th>
+        faction
+      </th>
+      <th>
+        type
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each @model.cards as |card|}}
+
+      <tr>
+        <td>
+          {{card.title}}
+        </td>
+        <td>
+          {{card.faction.name}}
+        </td>
+        <td>{{card.cardType.name}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

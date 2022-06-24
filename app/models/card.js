@@ -6,4 +6,5 @@ export default class CardModel extends Model {
 
   @belongsTo side;
   @belongsTo faction;
+  @belongsTo cardType;
 }

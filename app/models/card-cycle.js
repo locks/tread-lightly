@@ -5,6 +5,7 @@ export default class CardCycleModel extends Model {
   @attr('date') dateRelease;
 
   @hasMany cardSets;
+  @hasMany cards;
 
   get cardCount() {
     return this.cardSets.reduce((sum, set) => sum + set.size, 0);

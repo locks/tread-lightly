@@ -13,7 +13,9 @@
     {{#each (this.sortByDate @model) as |cycle|}}
       <tr>
         <td>
-          {{cycle.name}}
+          <LinkTo @route='cycle' @model={{cycle.id}}>
+            {{cycle.name}}
+          </LinkTo>
         </td>
         <td>
           {{cycle.cardCount}}

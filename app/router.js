@@ -9,4 +9,5 @@ export default class Router extends EmberRouter {
 Router.map(function () {
   this.route('cards');
   this.route('sets');
+  this.route('cycle', { path: 'cycle/:cycle_id' });
 });
