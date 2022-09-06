@@ -1,0 +1,36 @@
+<h2>Formats</h2>
+<ul>
+  {{#each @model.formats as |format|}}
+    <li>{{format.name}}</li>
+  {{/each}}
+</ul>
+
+<h2>{{@model.side}} Factions</h2>
+<ul>
+  <li>
+    <button {{on 'click' this.resetFaction}} type='button'>
+      All
+    </button>
+  </li>
+  {{#each @model.factions as |faction|}}
+    {{#let (eq faction.id this.selectedFaction.id) as |isSelected|}}
+      <li>
+        <button
+          {{on 'click' (fn this.selectFaction faction)}}
+          type='button'
+          disabled={{isSelected}}
+        >
+          {{faction.name}}
+        </button></li>
+    {{/let}}
+  {{/each}}
+</ul>
+
+<h2>Identities</h2>
+<ul>
+  {{#each this.filteredIdentities as |card|}}
+    <li>{{card.title}}</li>
+  {{else}}
+    <li>…</li>
+  {{/each}}
+</ul>
