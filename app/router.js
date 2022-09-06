@@ -10,4 +10,9 @@ Router.map(function () {
   this.route('cards');
   this.route('sets');
   this.route('cycle', { path: 'cycle/:cycle_id' });
+  this.route('deck', function () {
+    this.route('new', function () {
+      this.route('side', { path: ':side' });
+    });
+  });
 });
